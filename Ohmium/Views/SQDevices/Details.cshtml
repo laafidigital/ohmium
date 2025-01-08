@@ -1,0 +1,120 @@
+﻿@model Ohmium.Models.EFModels.Device
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Device</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EqDes)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EqDes)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.deviceType)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.deviceType)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.site)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.site.email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ec)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ec.equipmentConfigID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.comStatus)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.comStatus)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.h2Production)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.h2Production)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.powerConsumption)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.powerConsumption)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.siteEfficiency)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.siteEfficiency)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.createdOn)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.createdOn)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.updatedOn)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.updatedOn)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.createdBy)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.createdBy)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.updatedBy)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.updatedBy)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nStack)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nStack)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.statustype)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.statustype.id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ver)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ver)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.isRunning)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.isRunning)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.lastDataReceivedOn)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.lastDataReceivedOn)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.EqMfgID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

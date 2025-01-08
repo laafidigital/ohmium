@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Ohmium.Models.EFModels.Site>
+
+
+@*<form method="post">
+    <table>
+        <tr>
+            <td>
+                @Html.DropDownList("site",null,"Select",new {@class="form-control"})
+            </td>
+            <td><input type="submit" value="Search" class="btn btn-primary" /></td>
+            <td><a asp-action="Create" class="btn btn-secondary">Create New</a></td>
+       
+        </tr>
+    </table>
+</form>
+*@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <h3>SITE LIST</h3>
+            </th>
+@*            <th>
+                @Html.DisplayNameFor(model => model.device.EqMfgID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dCmd)
+            </th>
+            <th>@Html.DisplayNameFor(Model => Model.mxWbT)</th>
+            <th>@Html.DisplayNameFor(Model => Model.mnWbT)</th>
+            <th>@Html.DisplayNameFor(Model => Model.hxT)</th>
+            <th></th>*@
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                    <a asp-action="GetProfile" asp-route-id="@item.id" class="fa fa-sitemap" title="Run Profiles">
+                        @Html.DisplayFor(modelItem => item.name)
+                    </a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

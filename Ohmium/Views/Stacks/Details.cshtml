@@ -1,0 +1,42 @@
+﻿@model Ohmium.Models.EFModels.Stack
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Stack</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.sid)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.sid.email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.stackConfig)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.stackConfig)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.device)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.device.EqMfgID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.stackPosition)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.stackPosition)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.stackMfgID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

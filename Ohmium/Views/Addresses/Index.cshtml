@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Ohmium.Models.EFModels.Address>
+
+@{
+    TempData["PageTitle"] = "Address";
+}
+<!-- Content Wrapper. Contains page content -->
+    <!-- /.content-header -->
+    <!-- Main content -->
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="card col-12">
+                    <div class="card-header">
+                        <p>
+                            <a asp-action="Create" class="btn btn-outline-primary">Create New</a>
+                        </p>
+
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.site)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.address1)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.address2)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.address3)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.postalCode)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.city)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.state)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.country)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.site.email)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.address1)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.address2)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.address3)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.postalCode)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.city)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.state)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.country)
+                                        </td>
+                                        <td>
+                                            <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                                            <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                                            <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+<!-- /.content-wrapper -->
+

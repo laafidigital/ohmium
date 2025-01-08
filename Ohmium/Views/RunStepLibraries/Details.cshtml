@@ -1,0 +1,111 @@
+﻿@model Ohmium.Models.TemplateModels.RunStepLibrary
+
+@{
+    ViewData["Title"] = "Details";
+}
+<partial name="_template" />
+<table>
+    <tr>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-success"</td>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-warning"</td>
+    </tr>
+</table>
+<h1>Details</h1>
+
+<div>
+    <h4>RunStepLibrary</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.seqmaster)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.seqmaster.id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.stepNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.stepNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.duration)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.duration)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.cI)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cI)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.cV)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cV)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.wP)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.wP)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.hP)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.hP)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.wFt)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.wFt)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.wTt)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.wTt)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.cVt)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cVt)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.mnF)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.mnF)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.mxF)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.mxF)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.imF)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.imF)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.imA)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.imA)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

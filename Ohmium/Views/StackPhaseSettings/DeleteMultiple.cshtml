@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Ohmium.Models.EFModels.StackPhaseSetting>
+
+@{
+    ViewData["Title"] = "DeleteMultiple";
+}
+
+<h1>Stack Phases</h1>
+@*<form method="post">
+    <table>
+        <tr>
+            <td>
+                @Html.DropDownList("stk",null,"Select",new {@class="form-control"})
+            </td>
+            <td><input type="submit" value="Search" class="btn btn-primary" /></td>
+        </tr>
+    </table>
+</form>*@
+
+<form asp-action="DeleteMultiple">
+@*    <div style="overflow-y:scroll">*@
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.stk.stackMfgID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.phase)
+                    </th>
+                @*    <th>
+                        @Html.DisplayNameFor(model => model.phaseGroup)
+                    </th>*@
+                    <th>
+                        @Html.DisplayNameFor(model => model.phaseGroupLoop)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.rsg.name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.loop)
+                    </th>
+                    <th>  Duration </th>
+                    <th> Duration <sub>x</sub> Loops </th>
+                </tr>
+            </thead>
+            <tbody>
+
+    @Html.EditorForModel()
+            </tbody>
+        </table>
+@*    </div>*@
+    <input type="submit" value="Delete Multiple" class="btn btn-danger" /> |
+    <a asp-action="Index">Back to List</a>
+</form>

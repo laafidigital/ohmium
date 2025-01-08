@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Ohmium.Models.EFModels.DeviceTemplateAllocation>
+
+
+<h3>Test Stand Template Allocation</h3>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.device.EqMfgID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rpt.profileName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.stack)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.srpt)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.device.EqMfgID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.rpt.profileName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.stack.stackMfgID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.srpt.name)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

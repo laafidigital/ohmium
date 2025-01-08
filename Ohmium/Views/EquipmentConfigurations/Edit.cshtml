@@ -1,0 +1,64 @@
+﻿@model Ohmium.Models.EFModels.EquipmentConfiguration
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>EquipmentConfiguration</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="equipmentConfigID" />
+            <div class="form-group">
+                <label asp-for="configName" class="control-label"></label>
+                <input asp-for="configName" class="form-control" />
+                <span asp-validation-for="configName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="equipmentConfiguration" class="control-label"></label>
+                <input asp-for="equipmentConfiguration" class="form-control" />
+                <span asp-validation-for="equipmentConfiguration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="colorConfig" class="control-label"></label>
+                <input asp-for="colorConfig" class="form-control" />
+                <span asp-validation-for="colorConfig" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="createdOn" class="control-label"></label>
+                <input asp-for="createdOn" class="form-control" />
+                <span asp-validation-for="createdOn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="updatedOn" class="control-label"></label>
+                <input asp-for="updatedOn" class="form-control" />
+                <span asp-validation-for="updatedOn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="createdBy" class="control-label"></label>
+                <input asp-for="createdBy" class="form-control" />
+                <span asp-validation-for="createdBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="updatedBy" class="control-label"></label>
+                <input asp-for="updatedBy" class="form-control" />
+                <span asp-validation-for="updatedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

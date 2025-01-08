@@ -1,0 +1,51 @@
+﻿@model Ohmium.Models.TemplateModels.ScriptLibrary
+
+@{
+    ViewData["Title"] = "Details";
+}
+<partial name="_template" />
+<table>
+    <tr>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-success"</td>
+        <td><i class="btn btn-warning"</td>
+    </tr>
+</table>
+<h1>Details</h1>
+
+<div>
+    <h4>ScriptLibrary</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.script)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.script.id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.stepNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.stepNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.phaseLoop)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.phaseLoop)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.runStepLibraryWithLoop)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.runStepLibraryWithLoop)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

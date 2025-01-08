@@ -1,0 +1,68 @@
+﻿@model Ohmium.Models.EFModels.StackPhaseSetting
+<tr>
+    <td>
+        @Html.DisplayFor(item => item.stk.stackMfgID)
+        @Html.HiddenFor(item => item.id)
+        @Html.HiddenFor(item => item.stk.stackMfgID)
+    </td>
+    <td>
+        @Html.DisplayFor(item => item.phase)
+    </td>
+@*    <td>
+        @Html.DisplayFor(modelItem => item.phaseGroup)
+    </td>
+*@    <td>
+        @Html.DisplayFor(item => item.phaseGroupLoop)
+    </td>
+    <td>
+        @Html.DisplayFor(item => item.rsg.name)
+    </td>
+    <td>
+        @Html.DisplayFor(item => item.loop)
+    </td>
+    <td>
+        (hrs:mins:sec) @Html.DisplayFor(item => item.hrsminsdisplay)
+    </td>
+    <td>
+        (total hrs:mins:sec) @Html.DisplayFor(item => item.totalhrsminsdisplay)
+    </td>
+    <td>@Html.CheckBoxFor(e=>e.check)</td>
+    <td>
+        <a asp-action="Edit" asp-route-id=@Html.ValueFor(e=>e.id)><i class="fa fa-edit text-warning" title="Edit"></i></a> |
+@*        <a asp-action="Details" asp-route-id=@Html.ValueFor(e=>e.id)>Details</a>*@
+        <a asp-action="Delete" asp-route-id=@Html.ValueFor(e=>e.id)><i class="fa-regular fa-trash text-danger" title="Delete"></i></a>
+    </td>
+</tr>
+@*   <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.stk)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.stk.stackMfgID)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.phase)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.phase)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.rsg)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.rsg.id)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.loop)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.loop)
+        </dd>
+         <dt class = "col-sm-2">
+           Select
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.CheckBoxFor(model => model.check)
+        </dd>
+    </dl>*@
+

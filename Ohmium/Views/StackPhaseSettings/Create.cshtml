@@ -1,0 +1,84 @@
+﻿@model Ohmium.Models.EFModels.StackPhaseSetting
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var url = '@Url.Action("FetchPhaseCount")';
+        var url1 = '@Url.Action("FetchPhaseGroup")';
+        //var pg = $("#phaseGroup");
+        //pg.empty();
+        $("#stackID").change(function () {
+            var id = $(this).val();
+            $.getJSON(url, { id: id }, function (response) {
+                document.getElementById("numsteps").innerHTML = response + " phases already created";
+            });
+            $.getJSON(url1, { id: id }, function (response) {
+
+            //    pg.empty();
+            //    $.each(response, function (i, e) {
+                
+            //        pg.append($('<option><option>').text(e.text).val(e.id));
+            //    })
+//                document.getElementById("groupnumbers").innerHTML = response;
+            });
+        })
+    })
+</script>
+<h4>StackPhaseSetting</h4>
+<hr />
+<span><i id="numsteps"></i> &nbsp; <i id="groupnumbers"></i></span>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="stackID" class="control-label"></label>
+                <select asp-for="stackID" class="form-control" asp-items="ViewBag.stackID">
+                    <option selected>Select</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="phase" class="control-label"></label>
+                <input asp-for="phase" class="form-control" />
+                <span asp-validation-for="phase" class="text-danger"></span>
+            </div>
+@*            <div class="form-group">
+                <label asp-for="phaseGroup" class="control-label"></label>
+                <input name="phaseGroup" id="phaseGroup"/>
+                <span asp-validation-for="phaseGroup" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="phaseGroupLoop" class="control-label"></label>
+                <input asp-for="phaseGroupLoop" class="form-control" />
+                <span asp-validation-for="phaseGroupLoop" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="rsgid" class="control-label"></label>
+                <select asp-for="rsgid" class="form-control" asp-items="ViewBag.rsgid"><option selected>Select</option></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="loop" class="control-label"></label>
+                <input asp-for="loop" class="form-control" />
+                <span asp-validation-for="loop" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

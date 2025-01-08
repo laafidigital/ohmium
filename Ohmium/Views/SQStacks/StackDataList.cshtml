@@ -1,0 +1,273 @@
+﻿@model IEnumerable<Ohmium.Models.EFModels.MTSStackData>
+
+@{
+    ViewData["Title"] = "StackDataList";
+}
+
+<h1>StackDataList (Record Count: @ViewBag.count)</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.position)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.wF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.wT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.wP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.psI)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.psV)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cV1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cV2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cV3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cV4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cV5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.isF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cV6)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cR1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cR2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cR3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cR4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cR5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cX1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cX2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cX3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cX4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cX5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cR6)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CD)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.state)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.runHours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cumulativeHours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.stepNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.loopcnt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cM1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cM2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cM3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cM4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cM5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.seqName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.imF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.imA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.position)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.wF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.wT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.wP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.psI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.psV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cV1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cV2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cV3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cV4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cV5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cV6)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cR1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cR2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cR3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cR4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cR5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cX1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cX2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cX3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cX4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cX5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cR6)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.state)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.runHours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cumulativeHours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.stepNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.loopcnt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cM1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cM2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cM3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cM4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cM5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.seqName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.imF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.imA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.status)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

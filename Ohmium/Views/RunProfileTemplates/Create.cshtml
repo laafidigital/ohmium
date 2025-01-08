@@ -1,0 +1,73 @@
+﻿@model Ohmium.Models.EFModels.RunProfileTemplate
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>RunProfileTemplate</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="profileName" class="control-label"></label>
+                <input asp-for="profileName" class="form-control" />
+                <span asp-validation-for="profileName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dCmd" class="control-label"></label><br />
+                Start <input type="radio" asp-for="dCmd" value="Start" />
+                Pause <input type="radio" asp-for="dCmd" value="Pause" />
+                Stop <input type="radio" asp-for="dCmd" value="Stop" />
+                <span asp-validation-for="dCmd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fan" class="control-label"></label><br />
+                Start <input type="radio" asp-for="fan" value="True" />
+                Stop <input type="radio" asp-for="fan" value="False" />
+                <span asp-validation-for="fan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pump" class="control-label"></label><br />
+                Start <input type="radio" asp-for="pump" value="True" />
+                Stop <input type="radio" asp-for="pump" value="False" />
+                <span asp-validation-for="pump" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="mnWbT" class="control-label"></label><br />
+                <input type="number" asp-for="mnWbT" />
+                <span asp-validation-for="mnWbT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mxWbT" class="control-label"></label><br />
+                <input type="number" asp-for="mxWbT" />
+                <span asp-validation-for="mxWbT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="hxT" class="control-label"></label><br />
+                <input type="number" asp-for="hxT" />
+                <span asp-validation-for="hxT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="status" class="control-label"></label><br />
+                <select asp-for="status" asp-items="ViewBag.status"></select>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

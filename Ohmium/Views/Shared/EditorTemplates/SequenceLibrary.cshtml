@@ -1,0 +1,22 @@
+﻿@model Ohmium.Models.TemplateModels.SequenceLibrary
+
+<tr>
+    <td>
+        @Html.HiddenFor(item => item.sequenceName)
+        @Html.HiddenFor(item => item.id)
+        @Html.DisplayFor(item => item.sequenceName)
+    </td>
+    @*    <td>
+    @Html.DisplayFor(modelItem => item.phaseGroup)
+    </td>
+    *@
+    <td>
+      Loop Count  @Html.EditorFor(e=>e.loopCount,new {@placeholder="Loop Count"})
+    </td>
+
+    <td>
+       Sort Order <input type="number" asp-for="sortOrder" onblur="sortval(this.value)" placeholder="Sort Position" class="form-control" min="0"/>
+
+    </td>
+    <td>@Html.CheckBoxFor(e=>e.check)</td>
+</tr>

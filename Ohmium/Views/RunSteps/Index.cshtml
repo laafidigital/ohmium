@@ -1,0 +1,155 @@
+﻿@model IEnumerable<Ohmium.Models.EFModels.RunStep>
+@using Ohmium.Models.EFModels;
+
+
+<h3>Run Steps</h3>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            @{try
+                {
+                    var profile = (RunProfile)ViewData["runProfile"];
+                    <span>
+                        <b>Profile Name</b> @profile.profileName |
+                        <b>Device Mfg ID </b>@profile.deviceID |
+                        <b>Device Command </b>@profile.dCmd
+                    </span>
+                }
+                catch { }
+            }
+            @*<span>Profile Name @ViewBag["rp"]</span>*@
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="card">
+            @{try
+                {
+                    var profile = (StackRunProfile)ViewData["stkRunProfile"];
+                    <span>
+                        <b>Stk Run Name</b> @profile.name |
+                        <b>Stack Mfg ID </b>@profile.stk.stackMfgID |
+                        <b>Stack Run Command </b>@profile.command |
+                        <b>Loop </b>@profile.loop
+                    </span>
+                    <p>
+                        @*<a asp-action="Create" asp-route-id=@profile.stackID class="btn btn-outline-dark">Add Step</a>*@
+                        <a asp-action="Create" class="btn btn-outline-dark" asp-route-id="@profile.id">Add Step</a>
+
+                    </p>
+
+                }
+                catch { }
+            }
+        </div>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Stack Profile
+            </th>
+            <th>
+                @*  @Html.DisplayNameFor(model => model.testState)*@
+                @*@Html.DisplayNameFor(model => model.testState)*@
+                Sequence Name
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.stepNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sCmd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.duration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cI)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cV)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.wP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.wFt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.wTt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cVt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cVl)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.imA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.imF)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.srp.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.rstg.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.stepNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sCmd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.wP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.wFt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.wTt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cVt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.imA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.imF)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id"><i class="fa fa-edit text-warning" title="Edit"></i></a> |
+                @*<a asp-action="Details" asp-route-id="@item.id">Details</a> |*@
+                <a asp-action="Delete" asp-route-id="@item.id"><i class="fa fa-trash text-danger" title="Delete"></i></a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

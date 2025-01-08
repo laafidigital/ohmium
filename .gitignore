@@ -1,0 +1,5 @@
+*.dll
+**/bin
+**/obj
+/Docs/Ignition/Ign_Conf_LCC.json
+/Docs/Ignition/Ign_Conf_LTC.json

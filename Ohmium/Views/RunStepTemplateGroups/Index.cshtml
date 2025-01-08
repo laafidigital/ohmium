@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Ohmium.Models.EFModels.RunStepTemplateGroup>
+
+
+<h3>Sequence List <i style="font-size:14px">(@ViewBag.status)</i></h3>
+
+
+<p>
+    <a asp-action="Create">Create New</a>
+    <a asp-action='Index' asp-route-data="1" style="float:right" class="btn btn-success">Active</a>
+    <a asp-action='Index' asp-route-data="3" style="float:right" class="btn btn-warning">Inactive</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.numLoops)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.numLoops)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id"><i class="fa fa-edit text-warning"></i></a>
+                @*<a asp-action="Details" asp-route-id="@item.id">Details</a>*@
+                    <a asp-action="Delete" asp-route-id="@item.id"><i class="fa-regular fa-trash text-danger" title="Delete"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

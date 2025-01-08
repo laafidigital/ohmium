@@ -1,0 +1,79 @@
+﻿@model Ohmium.Models.EFModels.SQSite
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Site</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id" />
+            <div class="form-group">
+                <label asp-for="name" class="control-label"></label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="orgID" class="control-label"></label>
+                <select asp-for="orgID" class="form-control" asp-items="ViewBag.orgID"></select>
+                <span asp-validation-for="orgID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Region" class="control-label"></label>
+                <select asp-for="Region" class="form-control" asp-items="ViewBag.Region"></select>
+                <span asp-validation-for="Region" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="siteLat" class="control-label"></label>
+                <input asp-for="siteLat" class="form-control" />
+                <span asp-validation-for="siteLat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="siteLng" class="control-label"></label>
+                <input asp-for="siteLng" class="form-control" />
+                <span asp-validation-for="siteLng" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="email" class="control-label"></label>
+                <input asp-for="email" class="form-control" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="status" class="control-label"></label>
+                <input asp-for="status" class="form-control" />
+                <span asp-validation-for="status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="h2Production" class="control-label"></label>
+                <input asp-for="h2Production" class="form-control" />
+                <span asp-validation-for="h2Production" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="powerConsumption" class="control-label"></label>
+                <input asp-for="powerConsumption" class="form-control" />
+                <span asp-validation-for="powerConsumption" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="siteEfficiency" class="control-label"></label>
+                <input asp-for="siteEfficiency" class="form-control" />
+                <span asp-validation-for="siteEfficiency" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

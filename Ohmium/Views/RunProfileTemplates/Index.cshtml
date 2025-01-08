@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Ohmium.Models.EFModels.RunProfileTemplate>
+
+
+<h3>Run Profile Templates <i style="font-size:14px">(@ViewBag.msg)</i></h3>
+
+<p>
+    <a asp-action="Create">Create New</a>
+    <a asp-action='Index' asp-route-data="2" style="float:right" class="btn btn-warning">Inactive</a>
+    <a asp-action='Index' style="float:right" class="btn btn-success">Active</a>
+
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.profileName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dCmd)
+            </th>
+            <th>@Html.DisplayNameFor(Model => Model.mxWbT)</th>
+            <th>@Html.DisplayNameFor(Model => Model.mnWbT)</th>
+            <th>@Html.DisplayNameFor(Model => Model.hxT)</th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.profileName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dCmd)
+            </td>
+            <td>@Html.DisplayFor(modelItem => item.mxWbT)</td>
+            <td>@Html.DisplayFor(modelItem => item.mnWbT)</td>
+            <td>@Html.DisplayFor(modelItem => item.hxT)</td>
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id"><i class="fa fa-edit text-warning"></i></a> |
+           @*     <a asp-action="Index" asp-controller="StackRunProfileTemplates" asp-route-id="@item.id" title="Stack Run Template">SRT</a> |*@
+                <a asp-action="Delete" asp-route-id="@item.id"><i class="fa fa-trash text-danger"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,59 @@
+﻿@model Ohmium.Models.TemplateModels.ScriptLibrary
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<partial name="_template" />
+<table>
+    <tr>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-success"</td>
+        <td><i class="btn btn-warning"</td>
+    </tr>
+</table>
+
+<h1>Edit</h1>
+
+<h4>ScriptLibrary</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id" />
+            <div class="form-group">
+                <label asp-for="scriptId" class="control-label"></label>
+                <select asp-for="scriptId" class="form-control" asp-items="ViewBag.scriptId"></select>
+                <span asp-validation-for="scriptId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="stepNumber" class="control-label"></label>
+                <input asp-for="stepNumber" class="form-control" />
+                <span asp-validation-for="stepNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="phaseLoop" class="control-label"></label>
+                <input asp-for="phaseLoop" class="form-control" />
+                <span asp-validation-for="phaseLoop" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="runStepLibraryWithLoop" class="control-label"></label>
+                <input asp-for="runStepLibraryWithLoop" class="form-control" />
+                <span asp-validation-for="runStepLibraryWithLoop" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

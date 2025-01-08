@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Ohmium.Models.TemplateModels.StackSync>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<partial name="_template" />
+<table>
+    <tr>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-success"</td>
+    </tr>
+    </table>
+<p>
+@Html.ActionLink("Create Stack-Script","Create","StackSyncs",new {@class="btn btn-secondary"})
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Stack</th>
+            <th>Script</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(e=>item.stackID)</td>
+            <td>@Html.DisplayFor(e=>item.script.scriptName)</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.stackID}) |
+                @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.stackID })*@
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

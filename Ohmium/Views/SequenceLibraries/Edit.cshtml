@@ -1,0 +1,44 @@
+﻿@model Ohmium.Models.TemplateModels.SequenceLibrary
+@using Ohmium.Models.TemplateModels;
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<partial name="_template" />
+<table>
+    <tr>
+        <td><i class="btn btn-success"</td>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-warning"</td>
+    </tr>
+</table>
+<h1>Edit</h1>
+
+<h4>SequenceLibrary</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id" />
+            <div class="form-group">
+                <label asp-for="sequenceName" class="control-label"></label>
+                <input asp-for="sequenceName" class="form-control" values=@TempData["sl"] />
+                <span asp-validation-for="sequenceName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-outline-secondary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-outline-secondary">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

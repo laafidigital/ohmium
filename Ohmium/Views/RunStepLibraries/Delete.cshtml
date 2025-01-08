@@ -1,0 +1,121 @@
+﻿@model Ohmium.Models.TemplateModels.RunStepLibrary
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<partial name="_template" />
+<table>
+    <tr>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-success"</td>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-warning"</td>
+    </tr>
+</table>
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>RunStepLibrary</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.seqmaster)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.seqmaster.id)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.stepNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.stepNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.duration)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.duration)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.cI)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cI)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.cV)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cV)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.wP)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.wP)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.hP)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.hP)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.wFt)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.wFt)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.wTt)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.wTt)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.cVt)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cVt)
+        </dd>
+                <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.cVlimit)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cVlimit)
+        </dd>
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.mnF)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.mnF)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.mxF)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.mxF)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.imF)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.imF)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.imA)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.imA)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

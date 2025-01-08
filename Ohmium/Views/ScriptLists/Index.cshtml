@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Ohmium.Models.TemplateModels.ScriptList>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<partial name="_template" />
+<table>
+    <tr>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-success"</td>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-warning"</td>
+    </tr>
+</table>
+<p>
+    <span class="btn btn-outline-warning"><a asp-action="Create">Create New</a></span>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.scriptName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.scriptName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id"><i class="fa fa-edit text-warning"></i></a>
+@*                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+*@            </td>
+        </tr>
+}
+    </tbody>
+</table>

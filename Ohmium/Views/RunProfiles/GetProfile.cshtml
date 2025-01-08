@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Ohmium.Models.EFModels.RunProfile>
+
+@{
+    ViewData["Title"] = "GetProfile";
+}
+
+<h1>Run Profiles</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.profileName)
+            </th>
+            <th>
+TEST STAND
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dCmd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pump)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.mnWbT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.mxWbT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hxT)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.profileName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.device.EqMfgID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dCmd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pump)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mnWbT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mxWbT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hxT)
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.id"><i class="fa fa-edit text-warning" title="Edit"></i></a> |
+                    <a asp-action="Index" asp-controller="StackRunProfiles" asp-route-id="@item.id"><i class="fa fa-sitemap"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

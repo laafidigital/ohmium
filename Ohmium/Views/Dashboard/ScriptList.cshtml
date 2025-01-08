@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Ohmium.Models.TemplateModels.StackSync>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Stack Scripts</h1>
+<table class="table" id="example1">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model=>model.stackID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.script.scriptName)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem=>item.stackID)</td>
+                <td>
+                    <a asp-action="GetScripts" asp-controller="ScriptLibraries" asp-route-stkmfgid="@item.stackID">  @Html.DisplayFor(modelItem => item.script.scriptName)</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

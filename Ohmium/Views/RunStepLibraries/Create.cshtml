@@ -1,0 +1,95 @@
+﻿@model Ohmium.Models.TemplateModels.RunStepLibrary
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var seq = $("#seqMasterId");
+        seq.val("Select")
+        var url = '@Url.Action("GetRunStep")';
+        var url1 = '@Url.Action("GetAllSteps")';
+        $("#seqMasterId").change(function () {
+            var id = $(this).val();
+            $.getJSON(url, { rpid: id }, function (response) {
+                $("#stepNumber").val(response);
+                $("#rs").text(response - 1 + " step/s already created!");
+                $("#rs").show();
+              
+            });
+            $.getJSON(url1, { rpid: id }, function (response) {
+                document.getElementById("list").innerHTML=response;
+            });
+        });
+    })
+</script>
+<partial name="_template" />
+<table>
+    <tr>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-success"</td>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-warning"</td>
+    </tr>
+</table>
+<h4>
+    Create Run Step Library <span style="float:right;font-size:14px"><a asp-action="Index" class="btn btn-outline-primary">View All Steps</a></span>
+</h4>
+<hr />
+<div id="rs" style="display:none;color:tomato"></div>
+<form asp-action="Create">
+<table class="table table-striped">
+<tr>
+    <td>
+        <label>Sequence</label>
+        </td>
+        <td>
+            <select asp-for="seqMasterId" asp-items="ViewBag.seqMasterId" required>
+                <option>Select</option>
+            </select>
+           
+    </td>
+</tr>
+    <tr>
+        <th><label asp-for="stepNumber" class="control-label"></label></th>
+        <th><label asp-for="duration" class="control-label"></label></th>
+        <th><label asp-for="cI" class="control-label"></label></th>
+        <th><label asp-for="cV" class="control-label"></label></th>
+        <th><label asp-for="wP" class="control-label"></label></th>
+        <th><label asp-for="hP" class="control-label"></label></th>
+        <th><label asp-for="wFt" class="control-label"></label></th>
+        <th><label asp-for="wTt" class="control-label"></label></th>
+        <th><label asp-for="cVt" class="control-label"></label></th>
+            <th><label asp-for="cVlimit" class="control-label"></label></th>
+        @*<th><label asp-for="mnF" class="control-label"></label></th>
+        <th><label asp-for="mxF" class="control-label"></label></th>*@
+        <th><label asp-for="imF" class="control-label"></label></th>
+        <th><label asp-for="imA" class="control-label"></label></th>
+    </tr>
+    <tr>
+        <td><input asp-for="stepNumber" class="form-control" /></td>
+        <td><input asp-for="duration" class="form-control" /></td>
+        <td><input asp-for="cI" class="form-control"/></td>
+        <td><input asp-for="cV" class="form-control"/></td>
+        <td><input asp-for="wP" class="form-control"/></td>
+        <td><input asp-for="hP" class="form-control"/></td>
+        <td><input asp-for="wFt" class="form-control"/></td>
+        <td><input asp-for="wTt" class="form-control"/></td>
+        <td><input asp-for="cVt" class="form-control"/></td>
+            <td><input asp-for="cVlimit" class="form-control" /></td>
+        @*<td><input asp-for="mnF" class="form-control"></input></td>
+        <td><input asp-for="mxF" class="form-control"></input></td>*@
+    <td><input asp-for="imF" class="form-control"/></td>
+    <td><input asp-for="imA" class="form-control"/></td>
+    </tr>
+</table>
+    <input type="submit" value="Add" class="btn btn-secondary" style="float:right" />                     
+</form>
+<hr />
+<div id="list"></div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

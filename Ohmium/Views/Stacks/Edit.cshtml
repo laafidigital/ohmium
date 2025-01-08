@@ -1,0 +1,116 @@
+﻿@model Ohmium.Models.EFModels.Stack
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+    <script>
+        $(document).ready(function () {
+            var url = '@Url.Action("Validate")';
+            var deviceid = $("#deviceID").val();
+            $("#stackPosition").change(function () {
+                var pos = $(this).val();
+                var id = deviceid + '_' + pos;
+                $.getJSON(url, { id}, function (response) {
+                    if (response != "Available"  ) {
+                        $(this).val("UnAssigned");
+                        alert(response);
+                    //$("#stackPosition option[value='UnAssigned']").attr("selected", "selected");
+                        //$("#stackPosition").val("UnAssigned");
+                    //$(this).find("option[value='UnAssigned']").prop("selected", true);
+                    }
+                })
+            })
+
+        });
+    </script>
+<h1>Edit</h1>
+
+<h4>Stack</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="stackMfgID" />
+            <div class="form-group">
+                <label asp-for="stackMfgID" class="control-label"></label>
+                <input asp-for="stackMfgID" class="form-control" />
+                <span asp-validation-for="stackMfgID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="siteID" class="control-label"></label>
+                <select asp-for="siteID" class="form-control" asp-items="ViewBag.siteID"></select>
+                <span asp-validation-for="siteID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="deviceID" class="control-label"></label>
+                <select asp-for="deviceID" class="form-control" asp-items="ViewBag.deviceID"></select>
+                <span asp-validation-for="deviceID" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="stackConfig" class="control-label"></label>
+                <input asp-for="stackConfig" class="form-control" />
+                <span asp-validation-for="stackConfig" class="text-danger"></span>
+            </div>*@
+            @*<div class="form-group">
+                <label asp-for="stackPosition" class="control-label"></label>
+                <input asp-for="stackPosition" class="form-control" />
+                <span asp-validation-for="stackPosition" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="stackConfig" class="control-label"></label>
+                <select asp-for="stackConfig" class="form-control" asp-items="ViewBag.stackConfig"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="stackPosition" class="control-label"></label>
+                <select asp-for="stackPosition" class="form-control" asp-items="ViewBag.stackPosition">
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="meaNum" class="control-label"></label>
+                <input asp-for="meaNum" class="form-control" />
+                <span asp-validation-for="meaNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="meaArea" class="control-label"></label>
+                <input asp-for="meaArea" class="form-control" />
+                <span asp-validation-for="meaArea" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="status" class="control-label"></label>
+@*                <select asp-for="status" class="form-control" asp-items="ViewBag.status"></select>*@
+                Active<input type="radio" asp-for="status" value="1" />
+                Inactive<input type="radio" asp-for="status" value="3" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Script</label>
+                @*<select asp-for="status" class="form-control" asp-items="ViewBag.statusType"></select>*@
+                <select class="form-control" name="script" asp-items="ViewBag.Script"><option selected>Select</option></select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="command" class="control-label"></label>
+                @*<select asp-for="status" class="form-control" asp-items="ViewBag.statusType"></select>*@
+                Start<input type="radio" asp-for="command" value="Start" />
+                Stop<input type="radio" asp-for="command" value="Stop" />
+                Pause<input type="radio" asp-for="command" value="Pause" />
+                Decommission<input type="radio" asp-for="command" value="Decommissioned" />
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Ohmium.Models.EFModels.Org>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1><a asp-action="Create" class="btn btn-primary">Add Organisation</a></h1>
+<table class="table" id="example1">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OrgName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.status)
+            </th>
+@*            <th>
+                @Html.DisplayNameFor(model => model.createdOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.updatedOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.createdBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.updatedBy)
+            </th>
+*@            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrgName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.status)
+                </td>
+@*                <td>
+                    @Html.DisplayFor(modelItem => item.createdOn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.updatedOn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.createdBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.updatedBy)
+                </td>
+*@                <td>
+                    <a asp-action="Edit" asp-route-id="@item.OrgID"><i class="fa fa-edit text-warning" title="Edit"></i></a> |
+                        @*<a asp-action="Details" asp-route-id="@item.id">Details</a> |*@
+                    <a href="~/SQSites/Index?id=@item.OrgID" class="fa fa-sitemap" title="Sites"></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

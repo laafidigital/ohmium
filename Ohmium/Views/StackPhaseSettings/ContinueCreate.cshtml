@@ -1,0 +1,80 @@
+﻿@model Ohmium.Models.EFModels.StackPhaseSetting
+
+@{
+    ViewData["Title"] = "ContinueCreate";
+}
+
+
+<h4>StackPhaseSetting</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="ContinueCreate">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="stackID" class="control-label"></label>
+                <p id="stackID" name="stackID">@ViewBag.stkid</p>
+            </div>
+            <div class="form-group">
+                <label asp-for="phase" class="control-label"></label>
+                <input asp-for="phase" class="form-control" />
+                <span asp-validation-for="phase" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="rsgid" class="control-label"></label>
+                <select asp-for="rsgid" class ="form-control" asp-items="ViewBag.rsgid"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="loop" class="control-label"></label>
+                <input asp-for="loop" class="form-control" />
+                <span asp-validation-for="loop" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="hrs" class="control-label"></label>
+                <input asp-for="hrs" class="form-control" />
+                <span asp-validation-for="hrs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="totalHours" class="control-label"></label>
+                <input asp-for="totalHours" class="form-control" />
+                <span asp-validation-for="totalHours" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mins" class="control-label"></label>
+                <input asp-for="mins" class="form-control" />
+                <span asp-validation-for="mins" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="totalMins" class="control-label"></label>
+                <input asp-for="totalMins" class="form-control" />
+                <span asp-validation-for="totalMins" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="seconds" class="control-label"></label>
+                <input asp-for="seconds" class="form-control" />
+                <span asp-validation-for="seconds" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="hrsminsdisplay" class="control-label"></label>
+                <input asp-for="hrsminsdisplay" class="form-control" />
+                <span asp-validation-for="hrsminsdisplay" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="totalhrsminsdisplay" class="control-label"></label>
+                <input asp-for="totalhrsminsdisplay" class="form-control" />
+                <span asp-validation-for="totalhrsminsdisplay" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

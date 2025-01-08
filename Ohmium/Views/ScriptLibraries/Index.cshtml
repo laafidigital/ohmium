@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Ohmium.Models.TemplateModels.ScriptLibrary>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<style>
+    #loader {
+        display: none;
+    }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var url = '@Url.Action("ScriptSteps")';
+        $("#script").change(function () {
+            document.getElementById("loader").style.display = "block";
+            var id = $(this).val();
+            $.getJSON(url, { id: id }, function (response) {
+                if (response == "")
+                    document.getElementById("rs").style.display = "block";
+                else
+                    document.getElementById("slib").innerHTML = response;
+                document.getElementById("loader").style.display = "none";
+            });
+        });
+    })
+</script>
+<partial name="_template" />
+<table>
+    <tr>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-success"</td>
+        <td><i class="btn btn-warning"</td>
+    </tr>
+</table>
+<h1>Script Libraries</h1>
+
+<table>
+    <tr>
+        <td><a asp-action="Create" class="btn btn-outline-primary">Create New</a></td>
+        <td>
+            <select name="script" id="script" asp-items="@ViewBag.scripts" class="form-control">
+                <option>Select</option>
+            </select>
+        </td>
+        <td><div id="loader" class="spinner-grow text-primary"></div></td>
+    </tr>
+</table>
+
+
+<div id="slib"></div>

@@ -1,0 +1,25 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>Operation Clean Up</div>
+<hr />
+<form action="OperationCleanup" method="post">
+<div class="row">
+    <div class="col-md-6">
+<table class="table">
+    <tr>
+        <td>
+          Select Stack  <select name="stacks" id="stacks" asp-items="@ViewBag.stacks">
+                
+            </select>
+
+        </td>
+        <td>
+            <input type="submit" class="bt btn-primary" />
+        </td>
+    </tr>
+</table>
+    </div>
+</div>
+</form>

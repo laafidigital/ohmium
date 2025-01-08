@@ -1,0 +1,103 @@
+﻿@model Ohmium.Models.EFModels.Device
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h4>Edit Test Stand</h4>
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="EqMfgID" />
+            <table>
+                <tr>
+                    <td colspan="4">
+                        <div class="form-group">
+                            <label asp-for="deviceType" class="control-label"></label>
+                            MTS <input type="radio" asp-for="deviceType" value="MTS" />
+                            L1S1 <input type="radio" asp-for="deviceType" value="L1S1"/>
+                            L1S2 <input type="radio" asp-for="deviceType" value="L1S2"/>
+                            L1S3 <input type="radio" asp-for="deviceType" value="L1S3"/>
+                            <span asp-validation-for="deviceType" class="text-danger"></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label asp-for="EqDes" class="control-label"></label>
+                            <input asp-for="EqDes" class="form-control" />
+                            <span asp-validation-for="EqDes" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label asp-for="siteID" class="control-label"></label>
+                            <select asp-for="siteID" class="form-control" asp-items="ViewBag.siteID"></select>
+                            <span asp-validation-for="siteID" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label asp-for="configID" class="control-label"></label>
+                            <select asp-for="configID" class="form-control" asp-items="ViewBag.configID"></select>
+                            <span asp-validation-for="configID" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label asp-for="status" class="control-label"></label>
+                           @* <select asp-for="status" class="form-control" asp-items="ViewBag.status"></select>                         *@
+                            Active<input type="radio" asp-for="status" value="1" />
+                            Inactive<input type="radio" asp-for="status" value="3" />
+                        </div>
+
+                    </td>
+                </tr>
+            </table>
+
+
+            <div class="form-group">
+                <label asp-for="mnWbT" class="control-label"></label>
+                <input asp-for="mnWbT" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="mxWbT" class="control-label"></label>
+                <input asp-for="mxWbT" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="hxT" class="control-label"></label>
+                <input asp-for="hxT" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="dCmd" class="control-label"></label>
+                @*<select asp-for="status" class="form-control" asp-items="ViewBag.status"><option value="Select">Select</option></select>*@
+                Start<input type="radio" asp-for="dCmd" value="1" />
+                Pause<input type="radio" asp-for="dCmd" value="2" />
+                Stop<input type="radio" asp-for="dCmd" value="3" />
+                Decommission<input type="radio" asp-for="dCmd" value="4" />
+            </div>
+
+            <table width="100%">
+    <tr>
+        <td>
+            <a asp-action="Index">Back to List</a>
+        </td>
+        <td>
+            <input type="submit" value="Save" class="btn btn-primary" style="float:right" />
+        </td>
+
+    </tr>
+</table>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

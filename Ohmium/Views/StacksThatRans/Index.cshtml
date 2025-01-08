@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Ohmium.Models.EFModels.LotusModels.StacksThatRan>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(e=>e.deviceID)</th>
+            <th>@Html.DisplayNameFor(e=>e.stackID)</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(e=>item.deviceID)</td>
+
+            <td>@Html.DisplayFor(e=>item.stackID)</td>
+        </tr>
+}
+    </tbody>
+</table>

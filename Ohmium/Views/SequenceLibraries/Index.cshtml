@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Ohmium.Models.TemplateModels.SequenceLibrary>
+
+@{
+    ViewData["Title"] = "Sequence List";
+}
+<partial name="_template" />
+<table>
+    <tr>
+        <td><i class="btn btn-success"</td>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-warning"</td>
+    </tr>
+</table>
+
+<p>
+    <span class="btn btn-outline-warning"><a asp-action="Create">Create New</a></span>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Sequence List
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.sequenceName)
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.id"><i class="fa fa-edit text-warning"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

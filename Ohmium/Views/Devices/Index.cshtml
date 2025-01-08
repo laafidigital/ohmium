@@ -1,0 +1,73 @@
+﻿@using Microsoft.AspNetCore.Http
+@model IEnumerable<Ohmium.Models.EFModels.Device>
+
+
+<h3>Test Stand List <i style="font-size:14px">(@ViewBag.status)</i></h3>
+
+<p>
+    <a asp-action="Create">Create New</a>
+    <a asp-action='Index' asp-route-data="1" style="float:right" class="btn btn-success">Active</a>
+    <a asp-action='Index' asp-route-data="3" style="float:right" class="btn btn-warning">Inactive</a>
+</p>
+<table class="table" id="example1">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EqMfgID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EqDes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.deviceType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.site)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ec.configName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.statustype.name)
+            </th>
+            <th>Command</th>
+            <th>mnWbT</th>
+            <th>mxWbT</th>
+            <th>hxT</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.EqMfgID)</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EqDes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.deviceType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.site.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ec.configName)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.statustype.name)
+                </td>
+                <td>@Html.DisplayFor(modelItem => item.dCmd)</td>
+                <td>@Html.DisplayFor(modelItem => item.mnWbT)</td>
+                <td>@Html.DisplayFor(modelItem => item.mxWbT)</td>
+                <td>@Html.DisplayFor(modelItem => item.hxT)</td>
+                <td>
+            <a asp-action="Edit" asp-route-id="@item.EqMfgID"><i class="fa fa-edit text-warning" title="Edit"></i></a> |
+            @*<a asp-action="Details" asp-route-id="@item.EqMfgID">Details</a> |*@
+
+            <a href="~/Stacks/Index?id=@item.EqMfgID" class="fa fa-sitemap" title="Stacks"></a> |
+            <a asp-action="Delete" asp-route-id="@item.EqMfgID"><i class="fa-regular fa-trash text-danger" title="Delete"></i></a>
+        </td>
+        </tr>
+}
+    </tbody>
+</table>

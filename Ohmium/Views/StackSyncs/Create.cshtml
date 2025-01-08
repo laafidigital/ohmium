@@ -1,0 +1,91 @@
+﻿@model Ohmium.Models.TemplateModels.StackSync
+
+@{
+    ViewData["Title"] = "Create";
+}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var url = '@Url.Action("GetDevices")';
+        var url1 = '@Url.Action("GetStacks")';
+        var teststand = $("#teststand");
+        var stack = $("#stackID");
+        $("#site").change(function () {
+            teststand.empty();
+            var id = $(this).val();
+            $.getJSON(url, { id: id }, function (response) {
+                teststand.empty();
+                teststand.append($('<option></option>').text("Select").val("Select"));
+                $.each(response, function (index, item) {
+                    teststand.append($('<option></option>').text(item.text).val(item.id));
+                });
+            });
+        });
+        $("#teststand").change(function () {
+            var sid = $(this).val();
+            $.getJSON(url1, { id: sid }, function (response) {
+                stack.empty();
+                stack.append($('<option></option>').text("Select").val("Select"));
+                $.each(response, function (index, item) {
+                    stack.append($('<option></option>').text(item.text).val(item.id));
+                });
+            });
+        });
+    });
+</script>
+<partial name="_template" />
+<table>
+    <tr>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-success"</td>
+    </tr>
+</table>
+<h1>Create</h1>
+
+<h4>StackSync</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Sites</label>
+                <select name="site" id="site" class="form-control" asp-items="@ViewBag.site">
+                    <option>Select</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Test Stands</label>
+                <select name="teststand" id="teststand" class="form-control" asp-items="@ViewBag.teststand">
+                    <option>Select</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Stacks</label>
+                <select asp-for="stackID" class="form-control" asp-items="@ViewBag.stack">
+                    <option>Select</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Script</label>
+                <select asp-for="scriptID" class="form-control" asp-items="@ViewBag.script">
+                    <option>Select</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

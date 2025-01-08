@@ -1,0 +1,48 @@
+﻿@model Ohmium.Models.EFModels.StackRunProfile
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>StackRunProfile</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.profile)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.profile.id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.stk)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.stk.stackMfgID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.loop)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.loop)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.command)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.command)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

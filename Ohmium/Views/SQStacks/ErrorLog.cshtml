@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Ohmium.Models.EFModels.LotusModels.DeviceDataLog>
+
+@{
+    ViewData["Title"] = "ErrorLog";
+}
+
+<h1>ErrorLog</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model=>model.timeStamp)</th>
+            <th>
+                @Html.DisplayNameFor(model => model.description)
+            </th>
+            <th># Records: @ViewBag.Errorcount @ViewBag.stkdatacount</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.timeStamp)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.description)
+            </td>
+@*            <td>
+                <a asp-action="Edit" asp-route-id="@item.timeStamp">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.timeStamp">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.timeStamp">Delete</a>
+            </td>*@
+        </tr>
+}
+    </tbody>
+</table>

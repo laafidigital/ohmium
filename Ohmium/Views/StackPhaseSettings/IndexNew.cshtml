@@ -1,0 +1,94 @@
+﻿@model IEnumerable<Ohmium.Models.EFModels.StackPhaseSettingNew>
+
+
+<h3>Test Script</h3>
+<form method="post">
+    <table>
+        <tr>
+            <td>
+                @Html.DropDownList("stk",null,"Select",new {@class="form-control"})
+            </td>
+            <td><input type="submit" value="Search" class="btn btn-primary" /></td>
+            <td><a asp-action="CreateNew" class="btn btn-secondary">Create New</a></td>
+            @*        <td><a asp-action="DeleteMultiple" class="btn btn-secondary">Delete Multiple</a></td>*@
+        </tr>
+    </table>
+</form>
+
+<div style="overflow-y:scroll; height:350px">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.stk.stackMfgID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.phaseGroup)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.phaseLoop)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SequenceListWithLoop)
+                </th>
+@*                <th>
+                    @Html.DisplayNameFor(model => model.phaseGroup)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.phaseGroupLoop)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.rsg.name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.loop)
+                </th>
+                <th>  Duration </th>
+                <th> Duration <sub>x</sub> Loops </th>
+*@            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.stk.stackMfgID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.phaseGroup)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.phaseLoop)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SequenceListWithLoop)
+                    </td>
+                    
+@*                    <td>
+                        @Html.DisplayFor(modelItem => item.phaseGroup)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.phaseGroupLoop)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.rsg.name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.loop)
+                    </td>
+                    <td>
+                        (hrs:mins:sec) @Html.DisplayFor(modelItem => item.hrsminsdisplay)
+                    </td>
+                    <td>
+                        (total hrs:mins:sec) @Html.DisplayFor(modelItem => item.totalhrsminsdisplay)
+                    </td>*@
+                    <td>
+@*                        <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+*@                        <a asp-action="DeleteNew" asp-route-id="@item.id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

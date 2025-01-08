@@ -1,0 +1,337 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ADMIN\\Sep122022\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C7DD1424-898E-473E-A4B8-E56120C51CC4}|Ohmium.Repository\\Ohmium.Repository.csproj|c:\\users\\admin\\sep122022\\ohmium.repository\\stackrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7DD1424-898E-473E-A4B8-E56120C51CC4}|Ohmium.Repository\\Ohmium.Repository.csproj|solutionrelative:ohmium.repository\\stackrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|c:\\users\\admin\\sep122022\\ohmium\\controllers\\rmccapi\\selection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|solutionrelative:ohmium\\controllers\\rmccapi\\selection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|c:\\users\\admin\\sep122022\\ohmium\\controllers\\rmccadmin\\stackscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|solutionrelative:ohmium\\controllers\\rmccadmin\\stackscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|c:\\users\\admin\\sep122022\\ohmium\\controllers\\rmccapi\\devicedatascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|solutionrelative:ohmium\\controllers\\rmccapi\\devicedatascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|c:\\users\\admin\\sep122022\\ohmium\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|solutionrelative:ohmium\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|c:\\users\\admin\\sep122022\\ohmium\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|solutionrelative:ohmium\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|c:\\users\\admin\\sep122022\\ohmium\\controllers\\rmccadmin\\stackconfigscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|solutionrelative:ohmium\\controllers\\rmccadmin\\stackconfigscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|c:\\users\\admin\\sep122022\\ohmium\\controllers\\rmccadmin\\devicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|solutionrelative:ohmium\\controllers\\rmccadmin\\devicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9450D46A-5E7D-4D93-8BC5-F829ABAFF28F}|Ohmium.Models\\Ohmium.Models.csproj|c:\\users\\admin\\sep122022\\ohmium.models\\efmodels\\efmodellist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9450D46A-5E7D-4D93-8BC5-F829ABAFF28F}|Ohmium.Models\\Ohmium.Models.csproj|solutionrelative:ohmium.models\\efmodels\\efmodellist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|c:\\users\\admin\\sep122022\\ohmium\\controllers\\templates\\scriptlibrariescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|solutionrelative:ohmium\\controllers\\templates\\scriptlibrariescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9450D46A-5E7D-4D93-8BC5-F829ABAFF28F}|Ohmium.Models\\Ohmium.Models.csproj|c:\\users\\admin\\sep122022\\ohmium.models\\efmodels\\responsedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9450D46A-5E7D-4D93-8BC5-F829ABAFF28F}|Ohmium.Models\\Ohmium.Models.csproj|solutionrelative:ohmium.models\\efmodels\\responsedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|c:\\users\\admin\\sep122022\\ohmium\\controllers\\sqlite\\sqdevicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|solutionrelative:ohmium\\controllers\\sqlite\\sqdevicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|c:\\users\\admin\\sep122022\\ohmium\\controllers\\sqlite\\pushdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|solutionrelative:ohmium\\controllers\\sqlite\\pushdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|c:\\users\\admin\\sep122022\\ohmium\\controllers\\sqlite\\sqstackscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|solutionrelative:ohmium\\controllers\\sqlite\\sqstackscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|c:\\users\\admin\\sep122022\\ohmium\\controllers\\rmccapi\\singleapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|solutionrelative:ohmium\\controllers\\rmccapi\\singleapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|c:\\users\\admin\\sep122022\\ohmium\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|solutionrelative:ohmium\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|c:\\users\\admin\\sep122022\\ohmium\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|solutionrelative:ohmium\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|c:\\users\\admin\\sep122022\\ohmium\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|solutionrelative:ohmium\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|c:\\users\\admin\\sep122022\\ohmium\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9C97132-DB63-4A7F-BFDE-4A439063F4B9}|Ohmium\\Ohmium.csproj|solutionrelative:ohmium\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ResponseData.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Sep122022\\Ohmium.Models\\EFModels\\ResponseData.cs",
+              "RelativeDocumentMoniker": "Ohmium.Models\\EFModels\\ResponseData.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Sep122022\\Ohmium.Models\\EFModels\\ResponseData.cs",
+              "RelativeToolTip": "Ohmium.Models\\EFModels\\ResponseData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T10:52:57.113Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Selection.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\Controllers\\RMCCAPI\\Selection.cs",
+              "RelativeDocumentMoniker": "Ohmium\\Controllers\\RMCCAPI\\Selection.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\Controllers\\RMCCAPI\\Selection.cs",
+              "RelativeToolTip": "Ohmium\\Controllers\\RMCCAPI\\Selection.cs",
+              "ViewState": "AgIAAJgCAAAAAAAAAAAQwMEDAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T10:29:01.085Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "PushData.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\Controllers\\SQLite\\PushData.cs",
+              "RelativeDocumentMoniker": "Ohmium\\Controllers\\SQLite\\PushData.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\Controllers\\SQLite\\PushData.cs",
+              "RelativeToolTip": "Ohmium\\Controllers\\SQLite\\PushData.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T10:27:37.78Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DeviceDatasController.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\Controllers\\RMCCAPI\\DeviceDatasController.cs",
+              "RelativeDocumentMoniker": "Ohmium\\Controllers\\RMCCAPI\\DeviceDatasController.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\Controllers\\RMCCAPI\\DeviceDatasController.cs",
+              "RelativeToolTip": "Ohmium\\Controllers\\RMCCAPI\\DeviceDatasController.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAowC4AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T06:47:24.012Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Ohmium\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Ohmium\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAADgAAAAAAAAAAAAUwFQAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-17T07:58:15.331Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StackRepo.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Sep122022\\Ohmium.Repository\\StackRepo.cs",
+              "RelativeDocumentMoniker": "Ohmium.Repository\\StackRepo.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Sep122022\\Ohmium.Repository\\StackRepo.cs",
+              "RelativeToolTip": "Ohmium.Repository\\StackRepo.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAAC4AAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T05:01:36.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_LoginPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeDocumentMoniker": "Ohmium\\Views\\Shared\\_LoginPartial.cshtml",
+              "ToolTip": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeToolTip": "Ohmium\\Views\\Shared\\_LoginPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-29T05:07:52.58Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StacksController.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\Controllers\\RMCCAdmin\\StacksController.cs",
+              "RelativeDocumentMoniker": "Ohmium\\Controllers\\RMCCAdmin\\StacksController.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\Controllers\\RMCCAdmin\\StacksController.cs",
+              "RelativeToolTip": "Ohmium\\Controllers\\RMCCAdmin\\StacksController.cs",
+              "ViewState": "AgIAAB8BAAAAAAAAAAAQwCkBAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T07:33:38.583Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "EFModelList.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Sep122022\\Ohmium.Models\\EFModels\\EFModelList.cs",
+              "RelativeDocumentMoniker": "Ohmium.Models\\EFModels\\EFModelList.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Sep122022\\Ohmium.Models\\EFModels\\EFModelList.cs",
+              "RelativeToolTip": "Ohmium.Models\\EFModels\\EFModelList.cs",
+              "ViewState": "AgIAAJUBAAAAAAAAAAA8wFgCAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T09:41:54.221Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DevicesController.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\Controllers\\RMCCAdmin\\DevicesController.cs",
+              "RelativeDocumentMoniker": "Ohmium\\Controllers\\RMCCAdmin\\DevicesController.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\Controllers\\RMCCAdmin\\DevicesController.cs",
+              "RelativeToolTip": "Ohmium\\Controllers\\RMCCAdmin\\DevicesController.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-26T10:13:24.783Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "StackConfigsController.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\Controllers\\RMCCAdmin\\StackConfigsController.cs",
+              "RelativeDocumentMoniker": "Ohmium\\Controllers\\RMCCAdmin\\StackConfigsController.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\Controllers\\RMCCAdmin\\StackConfigsController.cs",
+              "RelativeToolTip": "Ohmium\\Controllers\\RMCCAdmin\\StackConfigsController.cs",
+              "ViewState": "AgIAAIYAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-26T10:13:44.198Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ScriptLibrariesController.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\Controllers\\Templates\\ScriptLibrariesController.cs",
+              "RelativeDocumentMoniker": "Ohmium\\Controllers\\Templates\\ScriptLibrariesController.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\Controllers\\Templates\\ScriptLibrariesController.cs",
+              "RelativeToolTip": "Ohmium\\Controllers\\Templates\\ScriptLibrariesController.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAIA1wBsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T07:33:38.9Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "SQStacksController.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\Controllers\\SQLite\\SQStacksController.cs",
+              "RelativeDocumentMoniker": "Ohmium\\Controllers\\SQLite\\SQStacksController.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\Controllers\\SQLite\\SQStacksController.cs",
+              "RelativeToolTip": "Ohmium\\Controllers\\SQLite\\SQStacksController.cs",
+              "ViewState": "AgIAAMQAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T09:45:27.64Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SQDevicesController.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\Controllers\\SQLite\\SQDevicesController.cs",
+              "RelativeDocumentMoniker": "Ohmium\\Controllers\\SQLite\\SQDevicesController.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\Controllers\\SQLite\\SQDevicesController.cs",
+              "RelativeToolTip": "Ohmium\\Controllers\\SQLite\\SQDevicesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T10:59:22.903Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "SingleAPI.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\Controllers\\RMCCAPI\\SingleAPI.cs",
+              "RelativeDocumentMoniker": "Ohmium\\Controllers\\RMCCAPI\\SingleAPI.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\Controllers\\RMCCAPI\\SingleAPI.cs",
+              "RelativeToolTip": "Ohmium\\Controllers\\RMCCAPI\\SingleAPI.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T09:44:09.225Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\Program.cs",
+              "RelativeDocumentMoniker": "Ohmium\\Program.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\Program.cs",
+              "RelativeToolTip": "Ohmium\\Program.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T07:57:10.839Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\Startup.cs",
+              "RelativeDocumentMoniker": "Ohmium\\Startup.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\Startup.cs",
+              "RelativeToolTip": "Ohmium\\Startup.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAqwGcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T07:53:38.403Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\appsettings.json",
+              "RelativeDocumentMoniker": "Ohmium\\appsettings.json",
+              "ToolTip": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\appsettings.json",
+              "RelativeToolTip": "Ohmium\\appsettings.json",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-17T07:24:16.081Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Ohmium\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Sep122022\\Ohmium\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Ohmium\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAhwCoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T05:02:46.121Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

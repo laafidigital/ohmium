@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Ohmium.Models.EFModels.StackConfig>
+
+<h3> Stack Config </h3>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table" id="example1">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.configName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.configString)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.configName)
+                </td>
+                @*<td>
+                    <span id="fthidden" style="display:none">
+                        <table class="table table-striped table-bordered">
+                            <tr>
+                                <td><b style="text-align:center; color:tomato">CONFIG JSON</b></td>
+                                <td><span class="fa fa-close" onclick="document.getElementById('fthidden').style.display = 'none'" style="float:right">X</span></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    @Html.DisplayFor(modelItem => item.configString)
+                                </td>
+                            </tr>
+                        </table>
+                    </span>
+
+                </td>*@
+                <td>
+                    @{
+                        int configLength = 0;
+                        try { configLength = item.colorConfig.Length; }
+                        catch { }
+                        string cconfig = "";
+                        if (configLength < 30)
+                            cconfig = item.colorConfig;
+                        else
+                            cconfig = item.colorConfig.Substring(0, 30);
+                        <span>@cconfig <span onmouseover="document.getElementById('cchidden').style.display = 'block'">...</span></span>
+                    }
+                <td colspan="2">
+                    @Html.DisplayFor(modelItem => item.colorConfig)
+                </td>
+              
+                <span id="cchidden" style="display:none">
+                    <table class="table table-striped table-bordered">
+                        <tr>
+                            <td><b style="text-align:center; color:tomato">COLOR CONFIG JSON</b></td>
+                            <td><span class="fa fa-close" onclick="document.getElementById('cchidden').style.display = 'none'" style="float:right">X</span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                @Html.DisplayFor(modelItem => item.colorConfig)
+                            </td>
+                        </tr>
+                    </table>
+                </span>
+
+              
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.configID"><i class="fa fa-edit text-warning" title="Edit"></i></a> |
+                    @*<a asp-action="Details" asp-route-id="@item.configID">Details</a> |*@
+                    <a asp-action="Delete" asp-route-id="@item.configID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

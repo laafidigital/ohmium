@@ -1,0 +1,114 @@
+﻿@model Ohmium.Models.EFModels.Device
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Device</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="EqMfgID" />
+            <div class="form-group">
+                <label asp-for="EqDes" class="control-label"></label>
+                <input asp-for="EqDes" class="form-control" />
+                <span asp-validation-for="EqDes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="deviceType" class="control-label"></label>
+                <input asp-for="deviceType" class="form-control" />
+                <span asp-validation-for="deviceType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="siteID" class="control-label"></label>
+                <select asp-for="siteID" class="form-control" asp-items="ViewBag.siteID"></select>
+                <span asp-validation-for="siteID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="configID" class="control-label"></label>
+                <select asp-for="configID" class="form-control" asp-items="ViewBag.configID"></select>
+                <span asp-validation-for="configID" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="comStatus" /> @Html.DisplayNameFor(model => model.comStatus)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="h2Production" class="control-label"></label>
+                <input asp-for="h2Production" class="form-control" />
+                <span asp-validation-for="h2Production" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="powerConsumption" class="control-label"></label>
+                <input asp-for="powerConsumption" class="form-control" />
+                <span asp-validation-for="powerConsumption" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="siteEfficiency" class="control-label"></label>
+                <input asp-for="siteEfficiency" class="form-control" />
+                <span asp-validation-for="siteEfficiency" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="createdOn" class="control-label"></label>
+                <input asp-for="createdOn" class="form-control" />
+                <span asp-validation-for="createdOn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="updatedOn" class="control-label"></label>
+                <input asp-for="updatedOn" class="form-control" />
+                <span asp-validation-for="updatedOn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="createdBy" class="control-label"></label>
+                <input asp-for="createdBy" class="form-control" />
+                <span asp-validation-for="createdBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="updatedBy" class="control-label"></label>
+                <input asp-for="updatedBy" class="form-control" />
+                <span asp-validation-for="updatedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nStack" class="control-label"></label>
+                <input asp-for="nStack" class="form-control" />
+                <span asp-validation-for="nStack" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="status" class="control-label"></label>
+                <select asp-for="status" class="form-control" asp-items="ViewBag.status"></select>
+                <span asp-validation-for="status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ver" class="control-label"></label>
+                <input asp-for="ver" class="form-control" />
+                <span asp-validation-for="ver" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="isRunning" class="control-label"></label>
+                <input asp-for="isRunning" class="form-control" />
+                <span asp-validation-for="isRunning" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="lastDataReceivedOn" class="control-label"></label>
+                <input asp-for="lastDataReceivedOn" class="form-control" />
+                <span asp-validation-for="lastDataReceivedOn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

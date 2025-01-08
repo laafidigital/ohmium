@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Ohmium.Models.EFModels.Stack>
+@{
+    ViewData["Title"] = "Stack List";
+}
+
+
+<h3><i style="font-size:14px">(@ViewBag.status)</i></h3>
+
+<p>
+    <a asp-action="Create">Create New</a>
+    <a asp-action='Index' asp-route-data="2" style="float:right" class="btn btn-warning">Inactive</a>
+    <a asp-action='Index' asp-route-data="1" style="float:right" class="btn btn-success">Active</a>
+
+</p>
+<br />
+<table class="table" id="example1">
+    <thead>
+        <tr>
+            <th>
+                Stack Position
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.stackMfgID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.device.EqMfgID)
+            </th>
+            <th>
+                SiteID
+            </th>
+
+            <th>@Html.DisplayNameFor(model => model.meaNum)</th>
+            <th>@Html.DisplayNameFor(model => model.meaArea)</th>
+            <th>@Html.DisplayNameFor(model => model.status)</th>
+            <th>@Html.DisplayNameFor(model => model.command)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.stackPosition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.stackMfgID)
+            </td>         
+            <td>
+                @Html.DisplayFor(modelItem => item.device.EqMfgID)
+            </td>
+            <td>@Html.DisplayFor(modelItem => item.sid.name)</td>
+            <td>@Html.DisplayFor(modelItem=>item.meaNum)</td>
+            <td>@Html.DisplayFor(modelItem=>item.meaArea)</td>
+                <td>@Html.DisplayFor(modelItem => item.sStatus.name)</td>
+            <td>@Html.DisplayFor(modelItem => item.command)</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.stackMfgID"><i class="fa fa-edit text-warning" title="Edit"></i></a>
+                @* |<a asp-action="Details" asp-route-id="@item.stackMfgID">Details</a> |*@
+                <a asp-action="Delete" asp-route-id="@item.stackMfgID"><i class="fa-regular fa-trash text-danger" title="Delete"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

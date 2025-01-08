@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Ohmium.Models.EFModels.Site>
+
+@{
+    TempData["PageTitle"] = "Sites";
+}
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table" id="example1">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.org)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.siteLat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.siteLng)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.org.OrgName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.siteLat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.siteLng)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.status)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id"><i class="fa fa-edit text-warning" title="Edit"></i></a> |
+                @*<a asp-action="Details" asp-route-id="@item.id">Details</a> |*@
+                <a href="~/Devices/Index?id=@item.id" class="fa fa-sitemap" title="Devices"></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

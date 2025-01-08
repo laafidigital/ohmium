@@ -1,0 +1,54 @@
+﻿@model Ohmium.Models.EFModels.StackRunProfileTemplate
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>StackRunProfileTemplate</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="name" class="control-label"></label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="profileID" class="control-label"></label>
+                <select asp-for="profileID" class="form-control" asp-items="ViewBag.profileID"></select>
+            </div>
+      @*      <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="loop" /> @Html.DisplayNameFor(model => model.loop)
+                </label>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="command" class="control-label"></label><br />
+                Start <input type="radio" asp-for="command" value="Start" />
+                Pause <input type="radio" asp-for="command" value="Pause" />
+                Stop <input type="radio" asp-for="command" value="Stop" />
+                <span asp-validation-for="command" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="status" class="control-label"></label>
+                <select asp-for="status" asp-items="ViewBag.status"></select>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

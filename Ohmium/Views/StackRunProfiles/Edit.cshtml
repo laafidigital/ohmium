@@ -1,0 +1,72 @@
+﻿@model Ohmium.Models.EFModels.StackRunProfile
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<script>
+    function teststop() {
+        var val = document.getElementById("command").value;
+        var result = confirm("The test will be terminated.",true);
+        if(result==true){
+            document.getElementById("command").value="stop";
+        }
+        else
+        {
+            document.getElementById("command").value = val;
+        }
+        document.getElementById("status").value = result;
+
+    }
+</script>
+<h1>Edit</h1>
+
+<h4>StackRunProfile</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id" />
+            <div class="form-group">
+                <label asp-for="name" class="control-label"></label>
+                <input asp-for="name" class="form-control"/>
+                <input type="hidden" asp-for="name" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="profileID" class="control-label"></label>
+                <select asp-for="profileID" class="form-control" asp-items="ViewBag.profileID"></select>
+                <span asp-validation-for="profileID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="stackID" class="control-label"></label>
+                <select asp-for="stackID" class="form-control" asp-items="ViewBag.stackID"></select>
+                <span asp-validation-for="stackID" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="loop" /> @Html.DisplayNameFor(model => model.loop)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="command" class="control-label"></label><br />
+                Start <input type="radio" asp-for="command" value="Start" />
+                Pause <input type="radio" asp-for="command" value="Pause" />
+                Stop <input type="radio"  onclick="teststop()" asp-for="command" value="Stop" />
+                <span asp-validation-for="command" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="hidden" id="status" name="status"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

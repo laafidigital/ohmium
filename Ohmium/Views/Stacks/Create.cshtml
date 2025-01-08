@@ -1,0 +1,118 @@
+﻿@model Ohmium.Models.EFModels.Stack
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Stack</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="stackMfgID" class="control-label"></label>
+                <input asp-for="stackMfgID" class="form-control" />
+                <span asp-validation-for="stackMfgID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="siteID" class="control-label"></label>
+                <select asp-for="siteID" class="form-control" asp-items="ViewBag.siteID"><option value="Select">Select</option></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="deviceID" class="control-label"></label>
+                <select asp-for="deviceID" class="form-control" asp-items="ViewBag.deviceID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="stackConfig" class="control-label"></label>
+                <select asp-for="stackConfig" class="form-control" asp-items="ViewBag.stackConfig"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="stackPosition" class="control-label"></label>
+                <select asp-for="stackPosition" class="form-control" asp-items="ViewBag.stackPosition"><option value="UnAssigned" selected="selected">UnAssigned</option></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="meaNum" class="control-label"></label>
+                <input asp-for="meaNum" class="form-control" />
+                <span asp-validation-for="meaNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="meaArea" class="control-label"></label>
+                <input asp-for="meaArea" class="form-control" />
+                <span asp-validation-for="meaArea" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="status" class="control-label"></label>
+            @*<select asp-for="status" class="form-control" asp-items="ViewBag.statusType"></select>*@
+                Active<input type="radio" asp-for="status" value="1" />
+                Inactive<input type="radio" asp-for="status" value="3" />
+            </div>
+            <div class="form-group">
+                <label asp-for="command" class="control-label"></label>
+                @*<select asp-for="status" class="form-control" asp-items="ViewBag.statusType"></select>*@
+                Start<input type="radio" asp-for="command" value="Start" />
+                Stop<input type="radio" asp-for="command" value="Stop" />
+                Pause<input type="radio" asp-for="command" value="Pause" />
+                Decommission<input type="radio" asp-for="command" value="Decommissioned" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Script</label>
+                @*<select asp-for="status" class="form-control" asp-items="ViewBag.statusType"></select>*@
+                <select class="form-control" name="script" asp-items="ViewBag.Script"><option selected>Select</option></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+<script>
+$(document).ready(function () {
+    var url = '@Url.Action("GetDevice")';
+    $("#stackPosition").val("UnAssigned");
+    var docs = $("#deviceID");
+docs.empty();
+docs.append($('<option></option>').text('Select').val(0));
+$("#siteID").change(function () {
+docs.empty();
+    var sid = $(this).val();
+if (sid == 0) {
+$("#pid").hide();
+}
+else{
+$("#pid").show();
+
+docs.append($('<option></option>').text('Select').val(0));
+$.getJSON(url, { id: sid }, function (response) {
+$.each(response, function (i, e) {
+docs.append($('<option></option>').text(e.text).val(e.id));
+});
+})
+}
+})
+       var url1 = '@Url.Action("Validate")';
+    $("#stackPosition").change(function () {
+        var deviceid = $("#deviceID").val();
+                var pos = $(this).val();
+                var id = deviceid + '_' + pos;
+                $.getJSON(url1, { id}, function (response) {
+                    if (response != "Available") {
+                        alert(response);
+                        $("#stackPosition").val("UnAssigned");
+                    }
+                })
+            })
+
+})
+</script>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,188 @@
+﻿@model Ohmium.Models.EFModels.RunStepTemplate
+
+@{
+    ViewData["Title"] = "Create";
+}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+<h1>Create</h1>
+
+<h4>RunStepTemplate</h4>
+<hr />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        var url = '@Url.Action("NumSteps")';
+        $("#rstGID").change(function() {
+            var id = $(this).val();
+            var prfid = $("#stkRunProfileID").val();
+            $.getJSON(url, { id: id, prfid: prfid }, function(response) {
+                document.getElementById("numsteps").innerHTML = response + " steps already created";
+            });
+        })
+
+    })
+</script>
+<i id="numsteps"></i>
+<form asp-action="Create">
+    <div class="row">
+        <div class="col-md-10">
+            <table>
+                <tr>
+                    <td>
+                        <label asp-for="stkRunProfileID" class="control-label"></label><br />
+                        <select asp-for="stkRunProfileID" class="form-control" asp-items="ViewBag.stkRunProfileID" id="stkRunProfileID"><option value="Select">Select</option></select>
+                        @*<input hidden asp-for="stkRunProfileID" value="@ViewData["stkRunProfileID"]" />*@
+                        @*<input value="@ViewBag.stkRunProfileID" />*@
+                    </td>
+                    <td>
+                        <label asp-for="rstGID" class="control-label" data-toggle="tooltip" title="Run Step Group">Sequence Name</label><br />
+                        <select asp-for="rstGID" class="form-control" asp-items="ViewBag.rstGID"><option value="Select">Select</option></select>
+                        <span asp-validation-for="rstGID" class="text-danger"></span>
+
+                    </td>
+                    @*<td>
+                    <label asp-for="testState" class="control-label"></label><br />
+                    <select asp-for="testState" class="form-control" asp-items="ViewBag.testStates"><option value="Select">Select</option></select>
+                    <span asp-validation-for="testState" class="text-danger"></span>
+                    </td>*@
+                    <td>
+                        <div>
+                            <label asp-for="stepNumber" class="control-label"></label>
+                            <input asp-for="stepNumber" class="form-control" value="@TempData["stkRnPfID"]" />
+                            <span asp-validation-for="stepNumber" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <label asp-for="sCmd" class="control-label"></label><br />
+                        Start <input type="radio" asp-for="sCmd" value="Start" />
+                        Impedence <input type="radio" asp-for="sCmd" value="Impedence" />
+                        Stop <input type="radio" asp-for="sCmd" value="Stop" />
+                        <span asp-validation-for="sCmd" class="text-danger"></span>
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+
+            <table>
+                <tr>
+
+                    <td>
+                        <div class="form-group">
+                            <label asp-for="duration" class="control-label"></label>
+                            <input asp-for="duration" class="form-control" value="0" />
+                            <span asp-validation-for="duration" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label asp-for="cI" class="control-label"></label>
+                            <input asp-for="cI" class="form-control" />
+                            <span asp-validation-for="cI" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label asp-for="cV" class="control-label"></label>
+                            <input asp-for="cV" class="form-control" />
+                            <span asp-validation-for="cV" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label asp-for="wP" class="control-label"></label>
+                            <input asp-for="wP" class="form-control" />
+                            <span asp-validation-for="wP" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label asp-for="hP" class="control-label"></label>
+                            <input asp-for="hP" class="form-control" />
+                            <span asp-validation-for="hP" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label asp-for="wFt" class="control-label"></label>
+                            <input asp-for="wFt" class="form-control" />
+                            <span asp-validation-for="wFt" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label asp-for="wTt" class="control-label"></label>
+                            <input asp-for="wTt" class="form-control" />
+                            <span asp-validation-for="wTt" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label asp-for="cVt" class="control-label"></label>
+                            <input asp-for="cVt" class="form-control" />
+                            <span asp-validation-for="cVt" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label asp-for="cVl" class="control-label"></label>
+                            <input asp-for="cVl" class="form-control" />
+                            <span asp-validation-for="cVl" class="text-danger"></span>
+                        </div>
+                    </td>
+                    @*                    <td>
+                    <div class="form-group">
+                    <label asp-for="mnF" class="control-label"></label>
+                    <input asp-for="mnF" class="form-control" />
+                    <span asp-validation-for="mnF" class="text-danger"></span>
+                    </div>
+                    </td>
+                    <td>
+                    <div class="form-group">
+                    <label asp-for="mxF" class="control-label"></label>
+                    <input asp-for="mxF" class="form-control" />
+                    <span asp-validation-for="mxF" class="text-danger"></span>
+                    </div>
+                    </td>
+                    *@
+
+                    <td>
+                        <div class="form-group">
+                            <label asp-for="imA" class="control-label"></label>
+                            <input asp-for="imA" class="form-control" />
+                            <span asp-validation-for="imA" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label asp-for="imF" class="control-label"></label>
+                            <input asp-for="imF" class="form-control" />
+                            <span asp-validation-for="imF" class="text-danger"></span>
+                        </div>
+                    </td>
+
+                    <td><input type="submit" value="Create" class="btn btn-primary" /></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</form>
+
+<div>
+    <a asp-action="Index" asp-controller="RunProfileTemplates" title="Run Profile Templates">Back to Profile Templates</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

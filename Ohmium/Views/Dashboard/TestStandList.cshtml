@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Ohmium.Models.EFModels.Device>
+
+@{
+    ViewData["Title"] = "TestStandList";
+}
+
+<h1>Test Stands</h1>
+<i>Select a Test Stand to view associated Stacks and Scripts</i>
+<table class="table">
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                    <a class="btn btn-outline-dark" asp-action="ScriptList" asp-controller="Dashboard" asp-route-divid=@item.EqMfgID> @Html.DisplayFor(modelItem => item.EqMfgID) </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

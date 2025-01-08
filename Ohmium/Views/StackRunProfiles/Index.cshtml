@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Ohmium.Models.EFModels.StackRunProfile>
+@using Ohmium.Models.EFModels;
+
+
+
+<h3>Stack Run Profiles</h3>
+@ViewBag.ch
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            @{try
+                {
+                    var profile = (RunProfile)ViewData["deviceConfig"];
+                    <span>
+                        <b>Profile Name</b> @profile.profileName |
+                        <b>Device Mfg ID </b>@profile.deviceID |
+                        <b>Device Command </b>@profile.dCmd
+                    </span>
+                    <div><a asp-action="Create" asp-route-id="@profile.id" class="btn btn-outline-dark">Add Stack Profile</a></div>
+
+                }
+                catch { }
+            }
+            @*<span>Profile Name @ViewBag["rp"]</span>*@
+        </div>
+    </div>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.profile.profileName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.stk)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.loop)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.command)
+            </th>
+            <th>@Html.DisplayNameFor(model=>model.stackPosition)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.profile.profileName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.stk.stackMfgID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.loop)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.command)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.stackPosition)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id"><i class="fa fa-edit text-warning" title="Edit"></i></a> |
+                <a asp-action="Delete" asp-route-id="@item.id"><i class="fa fa-trash text-warning" title="Delete"></i></a> |
+                @*<a asp-action="Details" asp-route-id="@item.id">Details</a> |*@
+                <a asp-action="index" asp-controller="RunSteps" asp-route-id="@item.id" class="fa fa-sitemap" title="Run Step"></a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

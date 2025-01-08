@@ -1,0 +1,83 @@
+﻿@model Ohmium.Models.EFModels.Device
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Test Stand</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EqMfgID" class="control-label"></label>
+                <input asp-for="EqMfgID" class="form-control" />
+                <span asp-validation-for="EqMfgID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EqDes" class="control-label"></label>
+                <input asp-for="EqDes" class="form-control" />
+                <span asp-validation-for="EqDes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="deviceType" class="control-label"></label>
+                MTS<input type="radio" asp-for="deviceType" value="MTS" />
+                LTS <input type="radio" asp-for="deviceType" value="LTS" />
+                L1S1 <input type="radio" asp-for="deviceType" value="L1S1" />
+                L1S2 <input type="radio" asp-for="deviceType" value="L1S2" />
+                L1S3 <input type="radio" asp-for="deviceType" value="L1S3" />
+                <span asp-validation-for="deviceType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="siteID" class="control-label"></label>
+                <select asp-for="siteID" class="form-control" asp-items="ViewBag.siteID"><option value="Select">Select</option></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="configID" class="control-label"></label>
+                <select asp-for="configID" class="form-control" asp-items="ViewBag.configID"><option value="Select">Select</option></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="status" class="control-label"></label>
+                @*<select asp-for="status" class="form-control" asp-items="ViewBag.status"><option value="Select">Select</option></select>*@
+                Active<input type="radio" asp-for="status" value="1" />
+                Inactive<input type="radio" asp-for="status" value="3" />
+            </div>
+            @*<div class="form-group">
+            <label asp-for="createdOn" class="control-label"></label>
+            <input asp-for="createdOn" class="form-control" />
+            <span asp-validation-for="createdOn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+            <label asp-for="updatedOn" class="control-label"></label>
+            <input asp-for="updatedOn" class="form-control" />
+            <span asp-validation-for="updatedOn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+            <label asp-for="createdBy" class="control-label"></label>
+            <input asp-for="createdBy" class="form-control" />
+            <span asp-validation-for="createdBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+            <label asp-for="updatedBy" class="control-label"></label>
+            <input asp-for="updatedBy" class="form-control" />
+            <span asp-validation-for="updatedBy" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

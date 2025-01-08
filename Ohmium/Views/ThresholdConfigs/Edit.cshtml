@@ -1,0 +1,51 @@
+﻿@model ThresholdConfig
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>ThresholdConfig</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id" />
+            <div class="form-group">
+                <label asp-for="paramName" class="control-label"></label>
+                <input asp-for="paramName" class="form-control" />
+                <span asp-validation-for="paramName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="minVal" class="control-label"></label>
+                <input asp-for="minVal" type="number" min="0" class="form-control" />
+                <span asp-validation-for="minVal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="maxVal" class="control-label"></label>
+                <input asp-for="maxVal" class="form-control" type="number" min="0" />
+                <span asp-validation-for="maxVal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="colorSortOrder" class="control-label"></label>
+                <input type="radio" asp-for="colorSortOrder" value="GreenToRed" />GreenToRed
+                <input type="radio" asp-for="colorSortOrder" value="RedToGreen" />RedToGreen
+                <input type="radio" asp-for="colorSortOrder" value="RedGreenRed" />RedGreenRed
+                <span asp-validation-for="colorSortOrder" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

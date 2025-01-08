@@ -1,0 +1,92 @@
+﻿@model IEnumerable<Ohmium.Models.EFModels.RunStepTemplateGroup>
+
+@{
+    ViewData["Title"] = "CreateNew";
+}
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+        var url = '@Url.Action("GetStacks")';
+        var stack = $("#stackID");
+        stack.empty();
+        stack.append($('<option></option>').text('Select').val("Select"));
+        $("#deviceID").change(function () {
+            var ttid = $(this).val()
+            $.getJSON(url, { tid: ttid }, function (response) {
+                stack.empty();
+                stack.append($('<option></option>').text("Select").val("Select"));
+                $.each(response, function (i, e) {
+                    stack.append($('<option></option>').text(e.text).val(e.val));
+                })
+            })
+        })
+    })
+</script>
+<style>
+    table.itemlist {
+        width: 80%;
+        table-layout: fixed;
+    }
+
+        table.itemlist tr td {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+</style>
+
+<h1>CreateNew</h1>
+
+<h4>StackPhaseSettingNew</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateNew">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                Test Stand List
+                <select name="deviceID" id="deviceID" class="form-control" asp-items="ViewBag.deviceID">
+                    <option>Select</option>
+                </select>
+            </div>
+            <div class="form-group" id="stackList">
+Stack
+                <select name="stackID" id="stackID" class="form-control" asp-items="ViewBag.stackID">
+                    <option>Select</option>
+                </select>
+            </div>
+            <div class="form-group" id="stackList">
+                <label name="phaseLoop" class="control-label">Step Loop</label>
+                <input name="phaseLoop" id="phaseLoop" class="form-control" />
+            </div>
+<table class="table table-striped">
+
+            @Html.EditorForModel()
+            </table>
+
+       @*     @foreach(var item in Model){
+                <tr>
+                    <td>Name: @Html.DisplayFor(modelItem=>item.name)</td>
+                    <td>@Html.HiddenFor(modelItem=>item.id)</td>
+                    <td>Loops: @Html.TextBoxFor(modelItem=>item.numLoops)</td>
+                </tr>
+
+            }*@
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

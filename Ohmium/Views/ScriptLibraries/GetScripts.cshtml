@@ -1,0 +1,47 @@
+﻿@model Ohmium.Models.EFModels.ViewModels.StackSynceViewModel
+
+@{
+    ViewData["Title"] = "GetScripts";
+}
+
+<h1>Scripts set for Stack</h1>
+@{
+    var count = 0;
+
+    <table class="table">
+
+                    <tbody>
+                      
+                            @if (count == 0)
+                            {
+                                <tr>
+                                    <td>StackMfgId: @Html.DisplayFor(e=>e.stk.stackMfgID)</td>
+                                    <td>Test Stand ID: @Html.DisplayFor(e=>e.stk.deviceID)</td>
+                                    <td>Command: @Html.DisplayFor(e=>e.stk.command)</td>
+                                </tr>
+                            }
+                            @foreach (var items in Model.scriptLib)
+                            {
+                                <tr>
+                                    <td>
+                                        Script Name  @Html.DisplayFor(modelItem => items.script.scriptName)
+                                    </td>
+                                    <td>
+                                      Step Number  @Html.DisplayFor(modelItem => items.stepNumber)
+                                    </td>
+                                    <td>
+                                    Phase Loop    @Html.DisplayFor(modelItem => items.phaseLoop)
+                                    </td>
+                                    <td>
+                                   Run Step     @Html.DisplayFor(modelItem => items.runStepLibraryWithLoop)
+                                    </td>
+                                </tr>
+                                count++;
+                            }
+                        
+               
+               
+                    </tbody>
+                    
+    </table>
+    }

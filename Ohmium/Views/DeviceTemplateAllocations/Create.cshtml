@@ -1,0 +1,80 @@
+﻿@model Ohmium.Models.EFModels.DeviceTemplateAllocation
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<h1>Create</h1>
+
+<h4>DeviceTemplateAllocation</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="deviceID" class="control-label"></label>
+                <select asp-for="deviceID" class="form-control" asp-items="ViewBag.deviceID">
+                <option>Select</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="templateID" class="control-label"></label>
+                <select asp-for="templateID" class="form-control" asp-items="ViewBag.templateID">
+                    <option>Select</option>
+                </select>
+                <span asp-validation-for="templateID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="stackID" class="control-label"></label>
+                <select asp-for="stackID" class="form-control" asp-items="ViewBag.stackID">
+                    <option>Select</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="stackRunProfileTemplateID" class="control-label"></label>
+                <select asp-for="stackRunProfileTemplateID" class="form-control" asp-items="ViewBag.stackRunProfileTemplateID">
+                    <option>Select</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function () {
+var url = '@Url.Action("GetStackByID")';
+    var docs = $("#stackID");
+   
+docs.empty();
+docs.append($('<option></option>').text('Select').val(0));
+    $("#deviceID").change(function () {
+docs.empty();
+    var sid = $(this).val();
+if (sid == 0) {
+$("#pid").hide();
+}
+else{
+$("#pid").show();
+    docs.append($('<option></option>').text('Select').val(0));
+    $.getJSON(url, { id: sid }, function (response) {    
+$.each(response, function (i, e) {
+docs.append($('<option></option>').text(e.text).val(e.id));
+});
+})
+}
+})
+})
+</script>
+   
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

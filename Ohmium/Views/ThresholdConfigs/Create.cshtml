@@ -1,0 +1,91 @@
+﻿@model ThresholdConfig
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ThresholdConfig</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="paramName" class="control-label"></label>
+
+                  <input list="param" name="paramName" id="paramName" class="form-control" />
+                <datalist id="param">
+                    <option value="wF-s" />
+                    <option value="wT-s" />
+                    <option value="wP-s" />
+                    <option value="hT-s" />
+                    <option value="hP-s"/>
+                    <option value="psI-s"/>
+                    <option value="psV-s"/>
+                    <option value="cv1-s"/>
+                    <option value="cv2-s"/>
+                    <option value="cv3-s"/>
+                    <option value="cv4-s"/>
+                    <option value="cv5-s"/>
+                    <option value="cR1-s"/>
+                    <option value="cR2-s"/>
+                     <option value="cR3-s"/>
+                      <option value="cR4-s"/>
+                       <option value="cR5-s"/>
+                         <option value="cX1-s"/>
+                         <option value="cX2-s"/>
+                         <option value="cX3-s"/>
+                         <option value="cX4-s"/>
+                         <option value="cX5-s"/>
+                         <option value="cM1-s"/>
+                         <option value="cM2-s"/>
+                         <option value="cM3-s"/>
+                         <option value="cM4-s"/>
+                         <option value="cM5-s"/>
+                         <option value="imF-s"/>
+                         <option value="imA-s"/>
+
+                         <option value="wL-t"/>
+                         <option value="wP-t"/>
+                         <option value="wC-t"/>
+                         <option value="wT-t"/>
+                         <option value="HRT-t"/>
+                         <option value="hxoT-t"/>
+                         <option value="HYS-t"/>
+                         <option value="wPp-t"/>
+                </datalist>
+                <span asp-validation-for="paramName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="minVal" class="control-label"></label>
+                <input asp-for="minVal" type="number" min="0" class="form-control" />
+                <span asp-validation-for="minVal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="maxVal" class="control-label"></label>
+                <input asp-for="maxVal" class="form-control" type="number" min="0" />
+                <span asp-validation-for="maxVal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="colorSortOrder" class="control-label"></label>
+                <input type="radio" asp-for="colorSortOrder" value="GreenToRed" />GreenToRed
+                <input type="radio" asp-for="colorSortOrder" value="RedToGreen" />RedToGreen
+                <input type="radio" asp-for="colorSortOrder" value="RedGreenRed" />RedGreenRed
+                <span asp-validation-for="colorSortOrder" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

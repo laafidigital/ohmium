@@ -1,0 +1,86 @@
+﻿@model Ohmium.Models.EFModels.DeviceTemplateAllocation
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>DeviceTemplateAllocation</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id" />
+            <div class="form-group">
+                <label asp-for="deviceID" class="control-label"></label>
+                @*<input type="button" disabled asp-for="deviceID" class="btn btn-default" />*@               
+                <select asp-for="deviceID" class="form-control" asp-items="ViewBag.deviceID"><option value="Select">Select</option></select>
+                <span asp-validation-for="deviceID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="templateID" class="control-label"></label>
+                <i>( @TempData["template"] )</i>
+                <select asp-for="templateID" class="form-control" asp-items="ViewBag.template"></select>
+                <span asp-validation-for="templateID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="stackID" class="control-label"></label>
+                @*<input type="button" disabled asp-for="stackID" class="btn btn-default" />*@              
+                <select asp-for="stackID" class="form-control" asp-items="ViewBag.stackID"></select>
+                <span asp-validation-for="stackID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Stack Template</label>
+                <i>@TempData["proftemp"]</i>
+                <select asp-for="stackRunProfileTemplateID" class="form-control" asp-items="ViewBag.stackRunProfileTemplateID"></select>
+                <span asp-validation-for="stackRunProfileTemplateID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function () {
+    var url = '@Url.Action("GetStackByID")';
+   
+    var docs = $("#stackID");
+    alert(docs);
+//docs.empty();
+    docs.append($('<option></option>').text('Select').val(0));
+    alert($("#deviceID"));
+    $("#deviceID").change(function () {
+        alert($("#deviceID"));
+       
+//docs.empty();
+    var sid = $(this).val();
+if (sid == 0) {
+$("#pid").hide();
+}
+else{
+$("#pid").show();
+    docs.append($('<option></option>').text('Select').val(0));
+    alert("sid:  " + sid);
+    $.getJSON(url, { id: sid }, function (response) {
+        alert("Resp:  " + response);
+        docs.empty();
+        docs.append($('<option></option>').text('Select').val(0));
+$.each(response, function (i, e) {
+docs.append($('<option></option>').text(e.text).val(e.id));
+});
+})
+}
+})
+})
+</script>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

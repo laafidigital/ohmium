@@ -1,0 +1,122 @@
+﻿@model Ohmium.Models.EFModels.RunStepTemplate
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>RunStepTemplate</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id" />
+            <div class="form-group">
+                <label asp-for="stkRunProfileID" class="control-label"></label>
+                <select asp-for="stkRunProfileID" class="form-control" asp-items="ViewBag.stkRunProfileID"></select>
+                <span asp-validation-for="stkRunProfileID" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="rstGID" class="control-label" title="Run Step Group"></label><br />
+                <select asp-for="rstGID" class="form-control" asp-items="ViewBag.rstGID"><option value="Select">Select</option></select>
+                <span asp-validation-for="rstGID" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="testState" class="control-label"></label><br />
+                <select asp-for="testState" class="form-control" asp-items="ViewBag.testStates"><option value="Select">Select</option></select>
+                <span asp-validation-for="testState" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="stepNumber" class="control-label"></label>
+                <input asp-for="stepNumber" class="form-control" />
+                <span asp-validation-for="stepNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="sCmd" class="control-label"></label><br />
+                Start <input type="radio" asp-for="sCmd" value="Start" />
+                Impedence <input type="radio" asp-for="sCmd" value="Impedence" />
+                Stop <input type="radio" asp-for="sCmd" value="Stop" />
+                <span asp-validation-for="sCmd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="duration" class="control-label"></label>
+                <input asp-for="duration" class="form-control" />
+                <span asp-validation-for="duration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cI" class="control-label"></label>
+                <input asp-for="cI" class="form-control" />
+                <span asp-validation-for="cI" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cV" class="control-label"></label>
+                <input asp-for="cV" class="form-control" />
+                <span asp-validation-for="cV" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="wP" class="control-label"></label>
+                <input asp-for="wP" class="form-control" />
+                <span asp-validation-for="wP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="hP" class="control-label"></label>
+                <input asp-for="hP" class="form-control" />
+                <span asp-validation-for="hP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="wFt" class="control-label"></label>
+                <input asp-for="wFt" class="form-control" />
+                <span asp-validation-for="wFt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="wTt" class="control-label"></label>
+                <input asp-for="wTt" class="form-control" />
+                <span asp-validation-for="wTt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cVt" class="control-label"></label>
+                <input asp-for="cVt" class="form-control" />
+                <span asp-validation-for="cVt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cVl" class="control-label"></label>
+                <input asp-for="cVl" class="form-control" />
+                <span asp-validation-for="cVl" class="text-danger"></span>
+            </div>
+      @*      <div class="form-group">
+                <label asp-for="mnF" class="control-label"></label>
+                <input asp-for="mnF" class="form-control" />
+                <span asp-validation-for="mnF" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="mxF" class="control-label"></label>
+                <input asp-for="mxF" class="form-control" />
+                <span asp-validation-for="mxF" class="text-danger"></span>
+            </div>*@
+                        <div class="form-group">
+                <label asp-for="imA" class="control-label"></label>
+                <input asp-for="imA" class="form-control" />
+                <span asp-validation-for="imA" class="text-danger"></span>
+            </div>
+                        <div class="form-group">
+                <label asp-for="imF" class="control-label"></label>
+                <input asp-for="imF" class="form-control" />
+                <span asp-validation-for="imF" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

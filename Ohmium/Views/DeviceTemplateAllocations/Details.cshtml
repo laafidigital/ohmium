@@ -1,0 +1,42 @@
+﻿@model Ohmium.Models.EFModels.DeviceTemplateAllocation
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>DeviceTemplateAllocation</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.device)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.device.EqMfgID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.templateID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.templateID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.stack)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.stack.stackMfgID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.srpt)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.srpt.id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

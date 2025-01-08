@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Ohmium.Models.EFModels.Site>
+
+@{
+    ViewData["Title"] = "SiteList";
+}
+
+<h1>SiteList</h1>
+
+<table class="table">
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                    <a asp-action="TestStandList" asp-controller="Dashboard" asp-route-siteid="@item.id" class="btn btn-outline-dark"> @Html.DisplayFor(modelItem => item.name)</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

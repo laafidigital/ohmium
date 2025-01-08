@@ -1,0 +1,11 @@
+﻿@model Ohmium.Models.EFModels.RunStepTemplateGroup
+
+    <span>@Html.HiddenFor(e=>e.id)
+        @Html.HiddenFor(e=>e.name)
+    </span>
+      <tr>
+            <td style="width:1000px">@Html.DisplayFor(e=>e.name)</td>
+            <td>Loops @Html.EditorFor(e=>e.numLoops)</td>
+            <td>Order No  @Html.EditorFor(e=>e.sequence)</td>
+            <td>Select  @Html.CheckBoxFor(e=>e.check)</td>
+      </tr>

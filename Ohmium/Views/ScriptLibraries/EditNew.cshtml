@@ -1,0 +1,101 @@
+﻿@model IEnumerable<Ohmium.Models.TemplateModels.SequenceLibrary>
+
+@{
+    ViewData["Title"] = "EditNew";
+}
+
+<h1>Edit Script Library</h1>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        //var seq = $("#scriptId");
+        //seq.val("Select")
+        var url = '@Url.Action("GetScriptStep")';
+        var url1 = '@Url.Action("GetAllSteps")';
+        
+        $("#scriptId").change(function () {
+            var id = $(this).val();
+            $.getJSON(url, { rpid: id }, function (response) {
+                $("#stepNumber").val(response);
+                $("#rs").text(response - 1 + " step/s already created!");
+                $("#rs").show();
+
+            });
+            $.getJSON(url1, { rpid: id }, function (response) {
+                document.getElementById("list").innerHTML = response;
+            });
+        });
+    })
+    var sortnumbers = [];
+    function sortval(i) {
+        var count = 0;
+        for (var a = 0; a < sortnumbers.length; a++) {
+            if (sortnumbers[a] == i) {
+                alert("Sort position already allocated");
+                count++;
+            }
+        }
+        if (count == 0)
+            sortnumbers.push(i);
+
+    }
+</script>
+<partial name="_template" />
+<table>
+    <tr>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-warning"</td>
+        <td><i class="btn btn-success"</td>
+        <td><i class="btn btn-warning"</td>
+    </tr>
+</table>
+
+<h4>SequenceLibrary</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="EditNew">
+            <table class="table table-striped">
+                <tr>
+                    <td>
+
+                      @* <select id="scriptId" name="scriptId" value="@ViewBag.scriptId" class="form-control" asp-items="ViewBag.scriptId">*@
+                        <input id="scriptId" name="scriptId" value=@ViewBag.scriptId style="display:none" />
+                        <input id="id" name="id" value=@ViewBag.id style="display:none" />
+<p>@ViewBag.scriptName</p>
+                    </td>
+                    <td>
+                        <input id="stepNumber" type="number" name="stepNumber" value="@ViewBag.stepNumber" class="form-control" min="0" />
+
+                    </td>
+                    <td>
+
+                        <input type="number" id="loop" name="loop" value="@ViewBag.scriptloop" class="form-control" min="0" />
+
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <table>
+                            @Html.EditorForModel()
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            <input type="submit" value="Edit" class="btn btn-primary" />    <div id="rs" style="display:none;color:tomato"></div>
+
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
